@@ -5,9 +5,19 @@
     <title>Home</title>
 </head>
 <body>
-<ul>
-    <li th:each="t : ${allTask}" th:text="|${t.description} ${t.status}|"></li>
+<form action="/add" method="post" th:object="${emptyTask}">
+    <input type="text" th:field="*{description}"> <br>
+    <input type="text" th:field="*{status}"> <br>
+    <input type="date" th:field="*{startDate}"> <br>
+    <input type="submit" value="Add new task"> <br>
+</form>
 
-</ul>
+<form action="/alltasks" method="get">
+    <input type="submit" value="Show all tasks"/>
+</form>
+
+<form action="/allToDoTasks" method="get">
+    <input type="submit" value="Show all tasks"/>
+</form>
 </body>
 </html>
