@@ -6,9 +6,9 @@
 </head>
 <body>
 <form action="/add" method="post" th:object="${emptyTask}">
-    <input type="text" th:field="*{description}"> <br>
-    <input type="text" th:field="*{status}"> <br>
-    <input type="date" th:field="*{startDate}"> <br>
+    <input type="text" th:field="*{description}" placeholder="Task description"> <br>
+    <input type="text" th:field="*{status}" placeholder="Task status"> <br>
+    <input type="date" th:field="*{startDate}" placeholder="Task start date"> <br>
     <input type="submit" value="Add new task"> <br>
 </form>
 
@@ -16,8 +16,8 @@
     <input type="submit" value="Show all tasks"/>
 </form>
 
-<form action="/allToDoTasks" method="get">
-    <input type="submit" value="Show all tasks"/>
+<form action="/alltodotasks" method="get">
+    <input type="submit" value="Show all TODO tasks"/>
 </form>
 </body>
 </html>

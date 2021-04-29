@@ -39,11 +39,11 @@ public class MainController {
         return "tasks";
     }
 
-    @GetMapping("/allToDoTasks")
+    @GetMapping("/alltodotasks")
     public String alltodotasks(Model model) {
-        List<Task> allTask = taskRepository.findAllToDoTasks();
-        model.addAttribute("allTask", allTask);
-        return "tasks";
+        List<Task> allByStatus = taskRepository.findAllByStatus(Status.TODO);
+        model.addAttribute("allByStatus", allByStatus);
+        return "todotasks";
     }
 
 }
