@@ -11,13 +11,11 @@
     <input type="date" th:field="*{startDate}" placeholder="Task start date"> <br>
     <input type="submit" value="Add new task"> <br>
 </form>
+<br>
+<a href="/alltasks" methods="get" >All tasks</a><br>
+<a href="/alltodotasks?status=TODO" methods="get" >All TODO tasks</a><br>
+<a href="/alltodotasks?status=IN_PROGRESS" methods="get" >All IN_PROGRESS tasks</a><br>
+<a href="/alltodotasks?status=DONE" methods="get" >All DONE tasks</a><br>
 
-<form action="/alltasks" method="get">
-    <input type="submit" value="Show all tasks"/>
-</form>
-
-<form action="/alltodotasks" method="get">
-    <input type="submit" value="Show all TODO tasks"/>
-</form>
 </body>
 </html>

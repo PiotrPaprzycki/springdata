@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -40,10 +41,15 @@ public class MainController {
     }
 
     @GetMapping("/alltodotasks")
-    public String alltodotasks(Model model) {
-        List<Task> allByStatus = taskRepository.findAllByStatus(Status.TODO);
-        model.addAttribute("allByStatus", allByStatus);
-        return "todotasks";
+    public String alltodotasks(Model model, @RequestParam(required = false) Status status) {
+        List<Task> allByStatus;
+        if (status != null) {
+            allByStatus = taskRepository.findAllByStatus(status);
+        } else {
+            allByStatus = taskRepository.findAll();
+        }
+        model.addAttribute("allTask", allByStatus);
+        return "tasks";
     }
 
 }
