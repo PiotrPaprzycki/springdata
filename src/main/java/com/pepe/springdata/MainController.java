@@ -19,10 +19,6 @@ public class MainController {
 
     @GetMapping("/")
     public String home(Model model) {
-
-//        Task task = allTask.get(0);
-//        task.setDescription("DONE");
-//        taskRepository.save(task);
         model.addAttribute("emptyTask", new Task());
         return "home";
     }
@@ -34,14 +30,7 @@ public class MainController {
     }
 
     @GetMapping("/alltasks")
-    public String alltasks(Model model) {
-        List<Task> allTask = taskRepository.findAll();
-        model.addAttribute("allTask", allTask);
-        return "tasks";
-    }
-
-    @GetMapping("/alltodotasks")
-    public String alltodotasks(Model model, @RequestParam(required = false) Status status) {
+    public String alltasks(Model model, @RequestParam(required = false) Status status) {
         List<Task> allByStatus;
         if (status != null) {
             allByStatus = taskRepository.findAllByStatus(status);

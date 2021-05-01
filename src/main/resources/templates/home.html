@@ -2,20 +2,29 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Home</title>
+    <title>Manage your tasks!</title>
 </head>
 <body>
 <form action="/add" method="post" th:object="${emptyTask}">
-    <input type="text" th:field="*{description}" placeholder="Task description"> <br>
-    <input type="text" th:field="*{status}" placeholder="Task status"> <br>
-    <input type="date" th:field="*{startDate}" placeholder="Task start date"> <br>
+    <label for="description">Task description</label><br>
+    <input type="text" name="description" id="description" th:field="*{description}" placeholder="Task description"> <br>
+    <label for="status">Task status</label><br>
+    <select name="status" id="status">
+        <option th:each="t : ${T(com.pepe.springdata.Status).values()}"
+                th:value="${t}" th:text="${t}"></option>
+    </select><br>
+    <label for="date">Start date</label><br>
+    <input type="date" name="date" id="date" th:field="*{startDate}" placeholder="Task start date"> <br>
+    <label for="date">Deadline!</label><br>
+    <input type="date" name="deadline" id="deadline" th:field="*{deadline}" placeholder="Deadline"> <br>
     <input type="submit" value="Add new task"> <br>
 </form>
 <br>
+
 <a href="/alltasks" methods="get" >All tasks</a><br>
-<a href="/alltodotasks?status=TODO" methods="get" >All TODO tasks</a><br>
-<a href="/alltodotasks?status=IN_PROGRESS" methods="get" >All IN_PROGRESS tasks</a><br>
-<a href="/alltodotasks?status=DONE" methods="get" >All DONE tasks</a><br>
+<a href="/alltasks?status=TODO" methods="get" >All TODO tasks</a><br>
+<a href="/alltasks?status=IN_PROGRESS" methods="get" >All IN_PROGRESS tasks</a><br>
+<a href="/alltasks?status=DONE" methods="get" >All DONE tasks</a><br>
 
 </body>
 </html>

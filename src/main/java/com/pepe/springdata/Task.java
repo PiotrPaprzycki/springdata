@@ -17,21 +17,19 @@ public class Task {
     private Status status;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate startDate;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+        private LocalDate deadline;
 
-    public LocalDate getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
+    public Task(long id, String description, Status status, LocalDate startDate, LocalDate deadline) {
+        this.id = id;
+        this.description = description;
         this.status = status;
+        this.startDate = startDate;
+        this.deadline = deadline;
+    }
+
+    public Task() {
+
     }
 
     public long getId() {
@@ -48,5 +46,29 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
+    }
+
+    public LocalDate getDeadline() {
+        return deadline;
+    }
+
+    public void setDeadline(LocalDate deadline) {
+        this.deadline = deadline;
     }
 }

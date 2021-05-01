@@ -7,7 +7,7 @@
 <body>
 
 <ul>
-    <li th:each="t : ${allTask}" th:text="|${t.description} ${t.status} ${t.startDate}|"></li>
+    <li th:each="t : ${allTask}" th:text="|${t.description} ${t.status} ${t.startDate} ${t.deadline}|"></li>
 </ul>
 
 </body>
