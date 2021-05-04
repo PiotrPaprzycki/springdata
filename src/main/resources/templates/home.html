@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Manage your tasks!</title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<head>
-    <meta charset="UTF-8">
-    <title>Manage your tasks!</title>
+<link rel="stylesheet" type="text/css" href="/style.css"th:href="@{/style.css}"/>
 </head>
+
 <body>
+<div class="content">
 <form action="/add" method="post" th:object="${emptyTask}">
     <label for="description">Task description</label><br>
     <input type="text" name="description" id="description" th:field="*{description}" placeholder="Task description">
@@ -29,6 +32,6 @@
 <a href="/alltasks?status=TODO" methods="get">All TODO tasks</a><br>
 <a href="/alltasks?status=IN_PROGRESS" methods="get">All IN_PROGRESS tasks</a><br>
 <a href="/alltasks?status=DONE" methods="get">All DONE tasks</a><br>
-
+</div>
 </body>
 </html>

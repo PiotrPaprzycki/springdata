@@ -1,4 +1,9 @@
-.content  {
+.content {
     width: 1000px;
-    margin: 100 px auto;
+    margin: 50px auto;
+}
+
+p {
+    background-color: black;
+    color: white;
 }
