@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import java.util.List;
 
 @Controller
-public class MainController {
+public class TaskController {
     private TaskRepository taskRepository;
 
-    public MainController(TaskRepository taskRepository) {
+    public TaskController(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
     }
 

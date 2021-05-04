@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
     <meta charset="UTF-8">
     <title>Manage your tasks!</title>
@@ -7,7 +9,8 @@
 <body>
 <form action="/add" method="post" th:object="${emptyTask}">
     <label for="description">Task description</label><br>
-    <input type="text" name="description" id="description" th:field="*{description}" placeholder="Task description"> <br>
+    <input type="text" name="description" id="description" th:field="*{description}" placeholder="Task description">
+    <br>
     <label for="status">Task status</label><br>
     <select name="status" id="status">
         <option th:each="t : ${T(com.pepe.springdata.Status).values()}"
@@ -21,10 +24,11 @@
 </form>
 <br>
 
-<a href="/alltasks" methods="get" >All tasks</a><br>
-<a href="/alltasks?status=TODO" methods="get" >All TODO tasks</a><br>
-<a href="/alltasks?status=IN_PROGRESS" methods="get" >All IN_PROGRESS tasks</a><br>
-<a href="/alltasks?status=DONE" methods="get" >All DONE tasks</a><br>
+
+<a href="/alltasks" methods="get">All tasks</a><br>
+<a href="/alltasks?status=TODO" methods="get">All TODO tasks</a><br>
+<a href="/alltasks?status=IN_PROGRESS" methods="get">All IN_PROGRESS tasks</a><br>
+<a href="/alltasks?status=DONE" methods="get">All DONE tasks</a><br>
 
 </body>
 </html>

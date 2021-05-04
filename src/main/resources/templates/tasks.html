@@ -2,13 +2,24 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>All tasks</title>
+    <title>Lista zadań</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css"/>
 </head>
+
 <body>
-
-<ul>
-    <li th:each="t : ${allTask}" th:text="|${t.description} ${t.status} ${t.startDate} ${t.deadline}|"></li>
-</ul>
-
+    <div class="list-group">
+        <button type="button" class="list-group-item list-group-item-action"
+                th:each="t : ${allTask}" th:text="|${t.description} ${t.status} ${t.startDate} ${t.deadline}|">
+        </button>
+    </div>
+    </div>
+<!--<ul class="list-group">-->
+<!--    <ul>-->
+<!--        <li th:each="t : ${allTask}" th:text="|${t.description} ${t.status} ${t.startDate} ${t.deadline}|"></li>-->
+<!--    </ul>-->
+<!--</ul>-->
+</div>
 </body>
 </html>
