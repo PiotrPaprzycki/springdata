@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
 <meta charset="UTF-8">
 <title>Lista zadań</title>
@@ -10,31 +10,17 @@
 <body>
     <div class="content" >
         <button type="button" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-                th:each="t : ${allTask}" >
-            <span th:text=${t.description}></span>
-            <span class="badge badge-primary badge-pill">14</span>
+                th:each="task : ${allTask}" >
+            <span th:text="|${task.description} ${task.status} ${task.startDate} ${task.deadline}|"></span>
+            <a th:href="|/done?id=${task.id}|" class="badge badge-primary badge-pill">Mark as DONE</a>
         </button>
 
 <!--<ul class="list-group">-->
 <!--    <ul>-->
-<!--        <li th:each="t : ${allTask}" th:text="|${t.description} ${t.status} ${t.startDate} ${t.deadline}|"></li>-->
+<!--        <li th:each="t : ${allTask}" th:text="|${task.description} ${task.status} ${task.startDate} ${task.deadline}|"></li>-->
 <!--    </ul>-->
 <!--</ul>-->
-
-    <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Cras justo odio
-            <span class="badge badge-primary badge-pill">14</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Dapibus ac facilisis in
-            <span class="badge badge-primary badge-pill">2</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            Morbi leo risus
-            <span class="badge badge-primary badge-pill">1</span>
-        </li>
-    </ul>
     </div>
+</div>
 </body>
 </html>
