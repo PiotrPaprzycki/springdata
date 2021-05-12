@@ -18,7 +18,7 @@ public class Task {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate startDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-        private LocalDate deadline;
+    private LocalDate deadline;
 
     public Task(long id, String description, Status status, LocalDate startDate, LocalDate deadline) {
         this.id = id;
