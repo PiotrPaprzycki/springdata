@@ -1,0 +1,10 @@
+.content {
+    width: 1000px;
+    margin: 50px auto;
+}
+
+.main {
+    display: inline-block;
+    width: 1000px;
+    margin: 100px auto;
+}
