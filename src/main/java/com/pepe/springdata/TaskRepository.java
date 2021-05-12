@@ -9,7 +9,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     List<Task> findAllByStatus(Status status);
 
     Task findTaskById(Long id);
-
+//    Task findAllByStatusIn(Status.DONE);
     @Query("SELECT t FROM Task t WHERE t.status NOT LIKE 'DONE'")
     List<Task> findNotDone();
 }
