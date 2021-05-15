@@ -7,5 +7,6 @@
 
 
     <include file="init.xml" relativeToChangelogFile="true"/>
+    <include file="extend_db.xml" relativeToChangelogFile="true"/>
 
 </databaseChangeLog>
