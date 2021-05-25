@@ -22,12 +22,8 @@ public class TaskController {
     @GetMapping("/")
     public String home(Model model) {
         model.addAttribute("emptyTask", new Task());
-        List<Task> allNotDoneTasks;
-        List<Task> allDoneTasks;
-        allNotDoneTasks = taskRepository.findNotDone();
-        model.addAttribute("allNotDoneTasks", allNotDoneTasks);
-        allDoneTasks = taskRepository.findAllByStatus(Status.DONE);
-        model.addAttribute("allDoneTasks", allDoneTasks);
+        model.addAttribute("allNotDoneTasks", taskRepository.findNotDone());
+        model.addAttribute("allDoneTasks", taskRepository.findAllByStatus(Status.DONE));
         return "home";
     }
 
