@@ -1,7 +1,6 @@
 package com.pepe.springdata;
 
 import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -18,18 +17,21 @@ public class Task {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate startDate;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-        private LocalDate deadline;
+    private LocalDate deadline;
+    private boolean mandatory;
+    private String assigne;
 
-    public Task(long id, String description, Status status, LocalDate startDate, LocalDate deadline) {
+    public Task() {
+    }
+
+    public Task(long id, String description, Status status, LocalDate startDate, LocalDate deadline, boolean mandatory, String assigne) {
         this.id = id;
         this.description = description;
         this.status = status;
         this.startDate = startDate;
         this.deadline = deadline;
-    }
-
-    public Task() {
-
+        this.mandatory = mandatory;
+        this.assigne = assigne;
     }
 
     public long getId() {
@@ -70,5 +72,21 @@ public class Task {
 
     public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
+    }
+
+    public boolean isMandatory() {
+        return mandatory;
+    }
+
+    public void setMandatory(boolean mandatory) {
+        this.mandatory = mandatory;
+    }
+
+    public String getAssigne() {
+        return assigne;
+    }
+
+    public void setAssigne(String assigne) {
+        this.assigne = assigne;
     }
 }
